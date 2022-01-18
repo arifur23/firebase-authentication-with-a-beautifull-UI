@@ -1,0 +1,36 @@
+name: firebase_authentication
+description: A new Flutter project.
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^2.0.0
+  cloud_firestore: ^3.1.5
+  firebase_auth: ^3.3.4
+  provider: ^6.0.2
+  fancy_drawer: ^2.0.0
+  salomon_bottom_bar: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/codelab.png
+    - assets/image.jpg
