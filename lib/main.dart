@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_authentication/Screens/drawer_screen.dart';
 import 'package:firebase_authentication/Screens/home_screen.dart';
 import 'package:firebase_authentication/Screens/login_screen.dart';
 import 'package:firebase_authentication/classes/applicationState.dart';
@@ -10,10 +9,8 @@ import 'classes/applicationState.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(
       ChangeNotifierProvider(
         create: (context) => ApplicationState(),
@@ -33,6 +30,7 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
+          toolbarHeight: 50,
           elevation: 0
         ),
         buttonTheme: Theme.of(context).buttonTheme.copyWith(
@@ -70,12 +68,12 @@ class _HomePageState extends State<HomePage> {
     if(currentUser != null){
       return const HomeScreen();
     }
-    return const HomeScreen();
+    return const LoginScreen();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const HomeScreen();
+    return currentUserIn();
 
   }
 }

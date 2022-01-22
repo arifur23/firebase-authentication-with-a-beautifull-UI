@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_authentication/Screens/drawer_screen.dart';
 import 'package:firebase_authentication/Screens/goals_screen.dart';
 import 'package:firebase_authentication/Screens/login_screen.dart';
+import 'package:firebase_authentication/Screens/my_body_screen.dart';
 import 'package:firebase_authentication/classes/applicationState.dart';
 import 'package:firebase_authentication/widgets/item.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   var userName = FirebaseAuth.instance.currentUser;
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -144,7 +142,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           return const GoalsScreen();
                         }));
                       },),
-                      Item(iconData: Icons.account_circle_rounded,iconColor: const Color(0xFF5532FA),boxColor: const Color(0xFFECEBFF),title: 'My Body',onPressed: (){},),
+                      Item(iconData: Icons.account_circle_rounded,iconColor: const Color(0xFF5532FA),boxColor: const Color(0xFFECEBFF),title: 'My Body',onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_)
+                        { return const MyBodyScreen();}));
+                      },),
                       Item(iconData: Icons.settings,iconColor: const Color(0xFFEE7537),boxColor: const Color(0xFFFFF0E7),title: 'Settings',onPressed: (){},),
                     ],
                   ),
